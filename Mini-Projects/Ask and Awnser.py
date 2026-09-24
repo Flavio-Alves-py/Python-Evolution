@@ -6,12 +6,13 @@ def questions():
     q3 = "How old were you when you first found out you were adoped?\n"
     questions = [q1,q2,q3]
     awnsers = []
-    for q in questions:
-        awnser = input(q)
-        awnsers.append(awnser)
-        print("Your awnser was: " + awnser)
-        print(awnsers)
 
+    for q in questions:
+        awnser = input(q) #User input for each question
+        awnsers.append(awnser) #Append the awnser to the list of awnsers
+        print("Your awnser was: " + awnser) 
+
+    #print(awnsers) #To view all awnsers at once, uncomment this line
 
 
 
