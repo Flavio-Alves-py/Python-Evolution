@@ -5,9 +5,13 @@ def questions():
     q2 = "Would you say you were happy?\n"
     q3 = "How old were you when you first found out you were adoped?\n"
     questions = [q1,q2,q3]
-
+    awnsers = []
     for q in questions:
-        input(q)
+        awnser = input(q)
+        awnsers.append(awnser)
+        print("Your awnser was: " + awnser)
+        print(awnsers)
+
 
 
 
