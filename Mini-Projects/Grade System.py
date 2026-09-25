@@ -45,7 +45,9 @@ class GradeSystem:
         elif score >= 100:
             return 'D'
         else:
-            return 'F'
+            return 'F' 
+        
+        
                 
 
 if __name__ == "__main__":
