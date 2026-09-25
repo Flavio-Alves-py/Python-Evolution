@@ -29,6 +29,14 @@ class GradeSystem:
                 #print(f"The grade for the score {score} is: {grade}") #To verify the grade for each score entered
             except ValueError as e:
                 print(e)
+
+        average = self.calculate_average()
+        print(f"\nAverage Score: {average:.2f}")
+        highest_score = max(self.scores)
+        lowest_score = min(self.scores)
+        print(f"Highest Score: {highest_score}")
+        print(f"Lowest Score: {lowest_score}")
+
     
     def score_to_grade(self, score):
             if score < 0 or score > 200:
@@ -46,8 +54,9 @@ class GradeSystem:
             return 'D'
         else:
             return 'F' 
-        
-        
+
+    def calculate_average(self):
+        return sum(self.scores) / len(self.scores)        
                 
 
 if __name__ == "__main__":
