@@ -9,8 +9,8 @@ class GradeSystem:
     def students(self):
         try:
             self.num_students = int(input("Enter the number of students: "))
-            if self.num_students <= 0:
-                raise ValueError("Number of students must be a positive integer.")
+            if self.num_students <= 0 or self.num_students > 100:
+                raise ValueError("Number of students must be a positive integer between 1 and 100.")
             return self.num_students
         except ValueError as e:
             print(e)
@@ -20,15 +20,16 @@ class GradeSystem:
         num_students = self.students()
         
         for s in range(num_students):
-            try:
-                score = float(input("Enter the score (0-200): "))
-                grade = self.score_to_grade(score)
-                self.scores.append(score)
-                self.grades.append(grade)
-                self.grade_counts[grade] += 1
-                #print(f"The grade for the score {score} is: {grade}") #To verify the grade for each score entered
-            except ValueError as e:
-                print(e)
+            while True:
+                try:
+                    score = float(input(f"Enter the score for student {s + 1} (0-200): "))
+                    grade = self.score_to_grade(score)
+                    self.scores.append(score)
+                    self.grades.append(grade)
+                    self.grade_counts[grade] += 1
+                    break  # Exit the loop if the score is valid
+                except ValueError as e:
+                    print(e)
 
         average = self.calculate_average()
         print(f"\nAverage Score: {average:.2f}")
